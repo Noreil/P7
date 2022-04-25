@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const userRouter = require('./routes/user.routes');
-const mysql = require('./config/db');
+const postRouter = require('./routes/post.routes');
 require('dotenv').config({ path: './config/.env' });
 
 const app = express();
@@ -23,6 +23,7 @@ app.use(express.json());
 
 // routes
 app.use('/api/user', userRouter);
+app.use('/api/post', postRouter);
 
 // server
 app.listen(process.env.PORT, () => {

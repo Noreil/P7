@@ -32,7 +32,9 @@ module.exports.updateUser = (req, res) => {
 
 module.exports.deleteUser = (req, res) => {
   const sqlDeleteUser = 'DELETE FROM users WHERE id = ?';
+
   mysqlConnection.query(sqlDeleteUser, req.params.id, (err, results) => {
+    // Voir avec Yazid comment vérifier si la valeur passer en paramètre existe
     if (!err) res.send({ message: 'Utilisateur supprimer' });
     else res.send({ err });
   });

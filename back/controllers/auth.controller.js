@@ -28,6 +28,7 @@ module.exports.signUp = (req, res) => {
       const user = new User(pseudo, email, hash);
       console.log(user);
 
+      // Voir avec Yazid si c'est la meilleu facon
       mysqlConnection.query(sqlCreateUser, user, (err, results) => {
         if (!err) {
           res.status(200).json({ message: 'Utilisateur créé' });
