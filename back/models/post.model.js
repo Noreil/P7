@@ -1,9 +1,9 @@
-class User {
-  constructor(pseudo, email, password) {
-    this.pseudo = pseudo;
-    this.email = email;
-    this.password = password;
+class Post {
+  constructor(message, picture, video) {
+    this.message = message;
+    this.picture = picture;
+    this.video = video;
   }
 }
 
-module.exports = User;
+module.exports = Post;

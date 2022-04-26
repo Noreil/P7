@@ -35,7 +35,7 @@ module.exports.signUp = (req, res) => {
         } else if (err.code == 'ER_NO_SUCH_TABLE') {
           // Créé la table users si elle n'existe pas
           mysqlConnection.query(sqlCreateTable, (err) => {
-            res.status(400).json({ message: 'Table users créée' });
+            res.status(201).json({ message: 'Table users créée' });
             // Ajoute l'utilisateur à la table après la création de la table
             mysqlConnection.query(sqlCreateUser, user, (err, results) => {
               if (err) console.log({ err });
